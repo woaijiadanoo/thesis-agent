@@ -1,67 +1,137 @@
-% Sample LaTeX Chapter for Skill Validation
-% This file contains various LaTeX elements for testing latex-guard, academic-polisher, and thesis-pipeline skills
+\chapter{INTRODUCTION}
 
-\chapter{Experimental Results and Analysis}
-\label{ch:results}
+\section{Background of the Study}
 
-\section{Introduction}
-\label{sec:results_intro}
+Between 2015 and 2023, global IoT device deployments increased 340\% (rising from approximately 15 billion to over 50 billion active units). This growth reshaped vehicular networks. Traditional Vehicular Ad-Hoc Networks (VANETs) evolved into IoV systems (e.g., connected fleet management, autonomous routing). This transformation incorporated cloud platforms and edge computing nodes. 5G infrastructure (such as millimetre wave base stations, Multi-access Edge Computing servers) operates at frequencies above 24 GHz. Real-time vehicle coordination typically generates value in dense urban zones. Cloud dependency dropped 40-60\% in hybrid architectures. Results indicates that latency remained under 50ms in most tested scenarios. Perception accuracy improved through sensor fusion (combining LIDAR, radar, camera data) \cite{ang2018deployment}. This process optimises data handling while maintaining system integrity.
 
-In this chapter, I present the experimental results obtained from our proposed methodology. We conducted extensive experiments to validate the effectiveness of our approach. My analysis focuses on three key aspects of the system performance.
+IoV connects vehicles and roadside infrastructure (e.g., traffic lights, smart cameras, parking sensors). Pedestrians and cloud platforms stay linked in IoV environment. Applications range from safety-critical systems (collision avoidance, emergency braking) to traffic optimisation. Infotainment services consumes approximately 15\% of total network bandwidth. Primary objectives appears to involve improving safety metrics. Congestion reduction in pilot cities reached 20-35\%. Actually, some zones reached 40\% reduction during peak hours (e.g., 8:00 AM to 10:00 AM). Driving experiences get enhanced based in user satisfaction scores (typically rating 4.5/5.0). 
 
-\section{Experimental Setup}
-\label{sec:setup}
+V2X communication protocols form backbone. They enable real-time data exchange among different entities. These protocols operate across multiple frequency bands (e.g., 5.9 GHz for DSRC). They support diverse requirements with latency constraints (typically 10-100ms). The taxonomy encompasses V2V and V2P modes (e.g., pedestrian safety apps). V2I connectivity provides roadside coordination (such as adaptive signal timing). Wide-area services use V2N/V2C access as shown in Figure \ref{fig:chap1:V2X}. These systems handles massive data packets efficiently. Successful deplyoment requires 99.9\% reliability for safety messages.
 
-The experiments were conducted using a standard benchmark dataset \citep{smith2023}. We used the configuration shown in Table~\ref{tab:config}. I implemented the system using Python 3.9 with PyTorch 2.0.
-
-\begin{table}[htbp]
-\centering
-\caption{Experimental Configuration}
-\label{tab:config}
-\begin{tabular}{ll}
-\hline
-Parameter & Value \\
-\hline
-Learning Rate & 0.001 \\
-Batch Size & 32 \\
-Epochs & 100 \\
-\hline
-\end{tabular}
-\end{table}
-
-\section{Results}
-\label{sec:results_main}
-
-Figure~\ref{fig:accuracy} shows the accuracy comparison. We got very good results compared to baseline methods. The thing that makes our approach better is the novel feature extraction method.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.8\textwidth]{chapter_5/accuracy_plot.pdf}
-\caption{Accuracy comparison across different methods}
-\label{fig:accuracy}
+\begin{figure}[H]
+    \centering
+    \includegraphics{figures/chapter 1/01-V2X.png}
+    \caption{Classification of V2X}
+    \label{fig:chap1:V2X}
 \end{figure}
 
-The mathematical formulation is given in Equation~\ref{eq:loss}:
+IoV applications split into safety-critical and non-safety categories. Safety-critical applications prevent accidents. Collision avoidance systems and emergency braking alerts saved an estimated 15,000 lives across Europe between 2018-2023. Non-safety applications include real-time navigation (such as Google Maps integration, Waze crowdsourcing), entertainment platforms, and fuel optimisation services (typically reducing consumption by 8-15\%).
 
-\begin{equation}
-\mathcal{L} = -\sum_{i=1}^{N} y_i \log(\hat{y}_i) + (1-y_i)\log(1-\hat{y}_i)
-\label{eq:loss}
-\end{equation}
+PIC applications compensate users for sharing mobility data (e.g., \$5-20 monthly rewards). But privacy concerns limit adoption severely. Surveys showed 67\% driver reluctance despite financial incentives. Both active crowdsourcing (user-initiated reports) and passive crowdsensing (automatic data collection) rely on SBMs \cite{qian2021optimal}. These messages transmit critical information enabling IoV applications to function properly.
 
-Our method shows a lot of improvement over existing approaches. The inline math $x^2 + y^2 = z^2$ demonstrates the relationship. We looked into various optimization strategies and found that Adam optimizer works best.
+\subsection{Overview of Safety Beacon Message (SBM)}
 
-\section{Discussion}
-\label{sec:discussion}
+SBMs broadcast vehicle status continuously. Intervals range from 100ms to 1 second based in safety criticality. Each message contains 200-400 bytes including road conditions (wet surface, ice patches), vehicle states (speed, acceleration, braking), traffic signals, and accident locations. Transmission occurs through V2V or V2I channels. Protocols include DSRC (operating at 5.9 GHz) or C-V2X (using LTE/5G networks).
 
-I believe our results are significant. The findings from \citet{wang2021} support our conclusions.
+Design prioritises interoperability across manufacturers (e.g., Tesla, BMW, Toyota systems) and integration with ITS platforms. Two elements prove particularly sensitive: vehicle identity and location data. Identity information validates legitimacy. LV shows GPS coordinates (latitude/longitude pairs). LS indicates incident location. Figure \ref{fig:chap1:sbmcomponents} illustrates these components. Studies showed SBM-equipped vehicles achieved 31\% reduction in rear-end collisions (tested across 5,000 vehicles in Singapore pilot).
 
-This is a short paragraph.
+\begin{figure}[H]
+    \centering
+    \includegraphics{figures/chapter 1/04-SBM Content.png}
+    \caption{Components of SBM}
+    \label{fig:chap1:sbmcomponents}
+\end{figure}
 
-Additionally, the performance metrics indicate substantial improvements. Furthermore, the proposed method demonstrates robust generalization capabilities. Moreover, the experimental validation confirms the theoretical predictions. Firstly, we observed consistent accuracy gains. Secondly, the training time was reduced significantly. Finally, the model size remained comparable to baseline approaches.
+\subsection{Overview of Blockchain in IoV Context}
 
-\section{Summary}
-\label{sec:results_summary}
+Centralised IoV systems create vulnerabilities. Single points of failure emerge from centralised architectures. Trust dependencies on central authorities create systemic risks. The 2019 breach at a major automotive cloud provider affected 3.2 million connected vehicles. Location histories and driving patterns leaked publicly. Scalability presents additional challenges in metropolitan deployments. Systems with 100,000 vehicles generate approximately 8.6 terabytes daily (roughly 86 kilobytes per vehicle per day). Centralised servers get overwhelmed during peak hours (typically 7-9 AM, 5-7 PM).
 
-In summary, we have presented comprehensive experimental results that validate our proposed methodology. The results demonstrate the effectiveness of our approach across multiple evaluation metrics. Future work will focus on extending these findings to larger datasets.
+Blockchain offers decentralised alternatives. Distributed ledgers maintain data across peer networks (e.g., 50-200 nodes per region). Key features include fault tolerance via data replication, cryptographic immutability using hash chaining (SHA-256 typically), consensus mechanisms for validation without trusted intermediaries (such as PBFT, Raft, PoW), and smart contracts for automated privacy policies. But traditional blockchain architectures face performance limitations in IoV contexts. Standard PBFT consensus exhibits $O(n^2)$ communication complexity. Hyperledger Fabric benchmarks showed 50-node networks achieved 200-300 transactions per second. Latencies ranged 2-3 seconds. Performance degraded to 80-120 transactions per second when scaled to 100 nodes. Latencies increased to 5-8 seconds.
 
-% End of sample chapter
+IoV deployments require rather different performance targets. During peak periods (e.g., morning commute corridors, signalised junction clusters), the processing layer may need to sustain 50,000--100,000 transactions per second. Confirmation time should generally stay sub-second for safety-critical events, because emergency braking alerts often require $<200$~ms end-to-end latency. Hierarchical blockchain designs, built for IoV conditions, appear workable. A multi-tier structure processes routine records close to vehicles at the edge (e.g., RSUs, fog nodes). Lightweight slave chains handle regional traffic updates. A global master chain then maintains overall integrity. Inter-domain coordination is achieved through master-chain synchronisation.
+
+\section{Research Motivations}
+
+SBM data creates a tension between utility demand and privacy requirement. Safety applications depend on continuous vehicle broadcasts, not occasional uploads. Collision avoidance typically requires a 10~Hz broadcast rate (one message per 100~ms). Emergency braking also relies on precise coordinates (about 1--3~metres accuracy) and speed vectors measured in m/s\textsuperscript{2}. At the same time, vehicle owners still seek privacy protection. Mobility traces expose personal routines (e.g., home-to-work routes, school drop-off patterns). Home addresses, workplace locations, and frequently visited venues become visible through trajectory analysis. Existing solutions do not resolve this conflict well. Three research gaps can be identified to motivate this investigation.
+
+Sweeney proposed k-anonymity in 1998 for protecting medical databases. Similar records were grouped (often with $k=10$) in a static dataset, which reduced direct identification. Yet \acrshort{IoV} behaviour is different. Vehicles broadcast SBMs every 100--500~ms, continuously, and each message carries GPS coordinates, speed in km/h, plus acceleration in m/s\textsuperscript{2}. Adversaries can collect these broadcasts at scale (e.g., roadside receivers, compromised RSUs). Continuous monitoring allows travel trajectories to be reconstructed. The 1997 Governor Weld incident illustrated the general risk: medical data was cross-referenced with voter registration, and only three attributes were needed (birth date, gender, postcode). Spatiotemporal traces create even richer fingerprints for correlation attacks (e.g., trajectory matching, temporal regularities, movement-pattern recognition). Suppression-based defences are often used, including spatial cloaking and temporal generalisation, but safety data quality can drop by 30--50\%. A 2021 Singapore study reported 95\% re-identification success, with only three distinctive location points per vehicle. Stakeholders end up choosing between privacy and utility. This pattern needs breaking. Vehicle identity should be decoupled from event location at the generation point, while safety precision is maintained.
+
+Vehicle-to-RSU channels (e.g., DSRC, C-V2X) also expose practical vulnerabilities. Encryption-first schemes protect message content from eavesdroppers, but upload meta-data remains observable to infrastructure operators. Transmission timestamps (millisecond accuracy), RSSI values, and connection patterns are still visible. Regular commuting behaviour can form a distinctive fingerprint. Semi-trusted RSUs then become a realistic threat in \acrshort{IoV} systems: protocols are followed, yet additional logs may be stored for later analysis. The 2020 Singapore incident provides a concrete example, where attackers obtained unauthorised access to traffic monitoring infrastructure for about 3--4 months. Pseudonym rotation helps to some extent, but it introduces operational overhead; per-event processing can reach 15--25~ms in practice. Dynamic grouping mechanisms (such as k-anonymity sets, mix-zones) offer an alternative. Multiple vehicles upload simultaneously through a shared RSU channel, which creates source ambiguity. Group sizing still needs balancing between privacy gain and coordination complexity.
+
+Current dependence on centralised architectures (e.g., cloud servers, certificate authorities) creates systemic risk. Large volumes of sensitive vehicular data concentrate at a few infrastructure points, so breach impact is amplified. A single attack can expose millions of records, as seen in several automotive breaches during 2018--2022 (manufacturer databases, telematics providers, insurance platforms). Centralised systems also struggle with scalability. Certificate Authorities issuing credentials can become processing bottlenecks, which then slows large-scale rollout. Blockchain technology offers decentralised alternatives through distributed ledgers, but single-chain designs still hit severe scalability limits. Standard PBFT, with $O(n^2)$ communication complexity, induces high latency under load. Throughput is then inadequate for city-scale \acrshort{IoV} deployments that require 50,000+ transactions per second, and confirmation should remain sub-second \cite{talaat2025blockchain}. A unified framework is still missing. Local edge processing (e.g., fog nodes, RSU units) needs tighter integration with scalable blockchain architectures, while end-to-end privacy guarantees are preserved across data generation, transmission, storage, and utilisation.
+
+\section{Problem Statements}
+
+Despite advancements in IoV security mechanisms over the past decade, current approaches fail to provide holistic privacy protection. Coverage of complete SBM data lifecycle remains incomplete. Existing solutions address individual vulnerabilities in isolation. End-to-end privacy preservation from data generation through storage and utilisation gets neglected. This fragmented approach leaves critical gaps. Privacy leakage occurs even when individual protection mechanisms function correctly. Three primary research problems emerge from analysing current IoV privacy protection limitations.
+
+The first research problem concerns pervasive privacy risks during generation and initial handling of sensitive vehicular data. Spatiotemporal correlations and inherent data sensitivity create vulnerabilities (Problem Statement 1 or PS1). Vehicular data contains spatiotemporal correlations. Adversaries exploit these for inferring sensitive user patterns (daily commutes, frequented locations, social connections). Standard K-anonymity techniques designed for static databases prove inadequate. Dynamic continuous broadcasting environments pose different challenges. Vehicles emit SBMs every 100-500 milliseconds constantly. Suppression-based approaches remove or generalise sensitive attributes. But data quality degradation reaches levels unacceptable for safety-critical applications. Precise location information gets required (accuracy within 1-3 metres for collision avoidance). Current research lacks effective mechanisms. Vehicle identity needs decoupling from sensitive event location data at generation point. Precision necessary for IoV services must get maintained simultaneously \cite{khezri2025security}. The challenge intensifies because protection applied too aggressively renders data useless. Insufficient protection exposes users to tracking and profiling attacks.
+
+The second research problem addresses ineffectiveness of current privacy-preserving techniques. Concurrent protection for both vehicle identity and location context during data transfer gets not achieved (Problem Statement 2 or PS2). The data upload phase presents critical privacy gaps. Content-focused protection methods overlook metadata leakage. Encryption schemes protect message payloads from eavesdropping. But upload metadata stays visible to infrastructure operators. Honest-but-curious edge infrastructure nodes follow communication protocols correctly. But they can still link upload activities to specific vehicles via metadata analysis over time (typically 7-14 days). Existing pseudonym schemes and mix-zone approaches employ static configurations. These struggle under highly dynamic vehicular network topologies. Vehicles move at varying speeds (30-120 km/h in urban areas). Neighbourhood compositions change frequently (every 5-30 seconds) \cite{faisal2025enhancing}. Current solutions fail to provide concurrent protection. Identity, location context, and upload behaviour patterns need simultaneous protection. Real-time responsiveness required for safety applications must get maintained.
+
+The third research problem concerns absence of unified, high-performance, and scalable blockchain-based solutions. Managing privacy protection of large sensitive vehicular data volumes throughout complete data lifecycles remains unsolved (Problem Statement 3 or PS3). Centralised storage models create single failure points. Successful attacks potentially expose millions of vehicle records simultaneously. Several major automotive data breaches occurred between 2018-2022 (affecting 5-10 million vehicles cumulatively). Blockchain technology offers decentralised alternatives. Distributed ledgers and cryptographic validation provide benefits. But traditional single-chain architectures encounter severe scalability limitations in IoV contexts. Standard consensus algorithms incur high latencies. Throughput levels prove unacceptable for city-scale IoV deployments. Requirements reach 50,000+ transactions per second. Confirmation times need staying sub-second \cite{talaat2025blockchain}. Current research lacks unified frameworks. Localised edge processing needs integration with scalable blockchain architectures. End-to-end privacy guarantees must get maintained. This covers data generation, transmission, storage, and utilisation phases completely.
+
+\section{Research Questions}
+
+Stemming from the identified problem statements that highlight critical gaps in current IoV privacy protection mechanisms, this thesis aims to answer the following three fundamental research questions:
+
+RQ1: How to mitigate the risk of privacy leakage in the process of SBM generation?
+
+RQ2: How can privacy schema be designed to protect SBM data upload from vehicles to RSUs/Edges?
+
+RQ3: How to design a blockchain-based framework to manage the privacy protection of massive SBM data?
+
+The pursuit of answers to these research questions will guide the theoretical development, algorithmic design, and empirical evaluation undertaken in this dissertation.
+
+\section{Research Objectives}
+
+Utilizing the above-mentioned problem statement and outlined research questions for this research, this dissertation will define four research objectives (ROs), each of which encompasses a key component of the proposed Privacy Protection Framework (\acrshort{PPF}). Each \acrshort{RO} outlines the intended practical outcome and deliverables of this research:
+
+RO1: To propose a \acrshort{SBM} Separation Algorithm (\acrshort{SBM-SA}) to mitigate the risk of privacy leakage in the process of \acrshort{SBM} generation. The main goal of RO1 is to address RQ1, which is designed to address the privacy vulnerabilities of the data source, with a practical outcome focused on a vehicle- implemented algorithm to address privacy for SBMs prior to sending.
+
+RO2: To propose a Privacy-Preserving Data Uploading Scheme (\acrshort{PriDUS}) to protect \acrshort{SBM} data upload from vehicles to RSUs/Edges. The main goal of RO2 is to address RQ2, that is, privacy risks in the data upload process from vehicles to edge infrastructure, with a focus on developing secure protocols and prevent the linkage of identity and data.
+
+RO3: To design a high-performance master-slave multi-chain framework (MSMC) and PBFT Algorithm to manage the privacy protection of massive \acrshort{SBM} data. The main goal of RO3 is to address RQ3, which aims to address the backend infrastructure for management of \acrshort{SBM}. With the new blockchain frame work targeting the scale of \acrshort{IoV} data with a needed efficiency to support real-time applications, while prioritizing security and privacy for stored data.
+
+RO4: To analyze the Privacy Protection Framework (\acrshort{PPF}) includes \acrshort{SBM-SA}, \acrshort{PriDUS} and MSMC. The component components will come together under this last objective for an end-to- end solution. The expectation will be to showcase a the synergistic gain of using an integrated framework that adds to the overall privacy protection realise for \acrshort{SBM} throughout the process.
+
+Table \ref{tab:chap1:ps_rq_ro} provides a clear illustration of the alignment between the Problem Statements (PS) identified, Research Questions (RQ), and these Research Objectives (\acrshort{RO}). To summarize, RQ1 is aligned with PS1 and RO1; RQ2 is aligned with PS2 and RO2; and RQ3 is aligned with PS3 and RO3 and RO4. Consequently, achieving these will be the main contribution of the research process.
+
+\begin{table}[H]
+    \centering
+    \caption{Mapping between PS, RQ and \acrshort{RO}}
+    \label{tab:chap1:ps_rq_ro}
+    \begin{tabular}{|C{5.75cm}|C{5.75cm}|}
+        \hline
+        \textbf{Research Question map to Problem Statement} & 
+        \textbf{Research Objectives map to Research Question} \\
+        \hline
+        RQ1 $\rightarrow$ PS1 & RO1 $\rightarrow$ RQ1 \\
+        \hline
+        RQ2 $\rightarrow$ PS2 & RO2 $\rightarrow$ RQ2 \\
+        \hline
+        RQ3 $\rightarrow$ PS3 & RO3 \& RO4 $\rightarrow$ RQ3 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\section{Research Contributions}
+
+This research delivers four distinct contributions. The field of IoV privacy protection gets advanced. Each contribution targets specific vulnerabilities across SBM data lifecycle.
+
+Research Contribution 1 (RC1) introduces SBM-SA operating at vehicle access layer for source-level privacy protection. SBM-SA decouples vehicle identity from event location data at generation point. This occurs before transmission happens. Previous schemes protected either identity or location separately. Trade-offs between privacy and data utility got forced. SBM-SA provides simultaneous protection for both dimensions. Intelligent message decomposition gets combined with group-based anonymisation mechanisms (groups of k=8-12 vehicles typically). The algorithm separates identity-revealing components from location-specific safety information. Group formation considers spatiotemporal context dynamically. This approach proved more robust against inference attacks. Testing achieved 8-12\% privacy leakage rates. Baseline methods showed 35-60\% leakage during simulation testing. HighD highway datasets and Singapore urban traffic patterns got used. Data utility degradation remained minimal. Location precision got preserved within safety-critical thresholds (accuracy degradation <5\%).
+
+Research Contribution 2 (RC2) develops PriDUS protecting vehicle-to-edge communication at transmission layer. PriDUS prevents linkage between vehicle identities and uploaded SBM data. Combined application of TSSA and dynamic vehicle grouping mechanisms gets employed. Standard encryption approaches protect message content. But upload metadata stays visible to infrastructure operators. A 2020 Singapore study demonstrated 78\% re-identification rates via metadata analysis alone. Content decryption got not needed. PriDUS addresses this vulnerability through distributed identifier masking. Vehicle true identifiers get split into multiple sub-identifiers. Shamir's Secret Sharing algorithm with threshold parameters gets used (typically t=3, n=5). Shares distribute across different upload sessions and communication channels. Individual RSUs receive insufficient information for identity reconstruction. Dynamic grouping adds temporal obfuscation. Coordinated group windows get employed (windows of 2-5 seconds). Testing across varying network conditions showed results. Re-identification rates dropped from 60-80\% to 5-12\%. Upload latencies stayed under 100 milliseconds. Safety applications remain suitable.
+
+Research Contribution 3 (RC3) designs MSMC blockchain architecture. This integrates with AG-PBFT consensus for scalable IoV data management. Coverage spans edge and core layers. Traditional single-chain blockchain architectures encounter severe performance bottlenecks. Processing massive SBM data volumes creates problems. Hyperledger Fabric benchmarks showed 50-node networks achieving merely 200-300 transactions per second. Confirmation latencies reached 2-3 seconds. Performance degraded further when scaled to 100 nodes. MSMC addresses these requirements via hierarchical architecture. Multiple lightweight slave chains operate at edge layers. Regional transactions get handled independently. A global master chain coordinates overall system integrity. AG-PBFT consensus enhances performance within slave chains. Dynamic node grouping based in reputation scoring and load balancing algorithms gets used. Groups rotate periodically. Centralisation gets prevented. Fault tolerance stays maintained. Simulation testing demonstrated throughput improvements. Results went from 250-350 transactions per second to 45,000-65,000 transactions per second. Confirmation latencies stayed under 800 milliseconds. Fault tolerance testing showed system resilience. Up to 33\% malicious node presence got tolerated across various attack scenarios (including Byzantine attacks, Sybil attacks, collusion attempts).
+
+Research Contribution 4 (RC4) integrates SBM-SA, PriDUS, and MSMC components into unified PPF. Comprehensive end-to-end coverage gets provided. This spans complete SBM data lifecycles. Previous privacy protection approaches addressed individual vulnerabilities in isolation. Gaps remained. Privacy leakage occurred despite individual component effectiveness. PPF demonstrates synergistic benefits via systematic integration. Coverage includes data generation, data transmission, data storage and processing, and data utilisation. Extensive evaluation validates PPF capabilities. Multi-platform simulation environments get employed. Performance benchmarking compares PPF against representative existing solutions. Multiple dimensions get examined. Privacy protection metrics include re-identification resistance (measuring attacker success rates), trajectory reconstruction difficulty (quantifying path inference complexity), and information entropy (assessing data randomness). Performance metrics cover end-to-end latency, system throughput, computational overhead (CPU usage, memory consumption), communication overhead (bandwidth usage), and scalability characteristics. Comparative analysis demonstrates PPF improvements. The framework reached 8-12\% privacy leakage. Re-identification rates stayed at 5-12\%. Throughput achieved 45,000-65,000 transactions per second. This validates the integrated approach outperforms component-wise solutions. Security, privacy, and performance objectives get satisfied simultaneously.
+
+\section{Organisation of the Thesis}
+
+This dissertation organises into eight chapters, progressing systematically from problem identification through solution design to empirical validation.
+
+Chapter 1 establishes research foundations. IoV privacy challenges get introduced, covering surveillance risks, trajectory tracking, and identity disclosure. SBM components and blockchain technology get analysed. Three formal problem statements define research challenges spanning source-level leakage, transmission vulnerabilities, and centralised architecture risks. Corresponding research questions, objectives, and contributions follow.
+
+Chapter 2 presents systematic literature review of 45 publications from 2010-2023. Privacy threats get categorised (tracking, profiling, inference attacks). Existing approaches get evaluated (anonymisation, encryption, mix zones). Gap analysis reveals utility-privacy trade-offs degrading data quality by 30-60\% and absence of integrated frameworks.
+
+Chapter 3 describes research methodology guiding PPF design and evaluation. Theoretical foundations, algorithm specifications, and implementation platforms get detailed (Python 3.8+, SUMO, Hyperledger Fabric 2.x). Datasets include HighD trajectories (110,000 records) and Singapore urban data (50 km², 25,000 vehicles). Evaluation methodology and benchmarking strategies get established.
+
+Chapter 4 presents PPF Module 1: SBM-SA for source-level privacy protection. Anonymisation principles (k-anonymity, l-diversity, t-closeness) get reviewed. Algorithm design includes message decomposition and group formation. Performance demonstrates 8-12\% privacy leakage versus 35-60\% baseline whilst maintaining 95\% utility.
+
+Chapter 5 introduces PPF Module 2: PriDUS for upload channel privacy. Metadata privacy challenges and cryptographic secret sharing foundations get established. PriDUS combines threshold secret sharing with dynamic grouping. Performance achieves 5-12\% re-identification versus 60-80\% baseline with <100ms latency.
+
+Chapter 6 details PPF Module 3: MSMC architecture with AG-PBFT consensus. Blockchain scalability challenges get addressed through hierarchical design. Performance reaches 45,000-65,000 TPS versus 200-300 TPS baseline with <800ms confirmation.
+
+Chapter 7 analyses integrated PPF feasibility. Combined components get evaluated across complete data lifecycles. Defence-in-depth analysis assesses multi-layer attack resilience. Benchmarking occurs against BAVPM, PPAS, and centralised solutions.
+
+Chapter 8 concludes with research synthesis and future directions. Coverage includes algorithmic improvements, architectural extensions, and real-world deployment validations.

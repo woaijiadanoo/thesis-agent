@@ -1,0 +1,19 @@
+---
+description: File hygiene and temporary file handling
+alwaysApply: true
+---
+
+# File Hygiene Rules
+
+## Minimize New Files
+- Do not create extra files unless explicitly needed for the task.
+- Prefer updating existing files over creating new versions or duplicates.
+
+## Temporary Files
+- If a temporary or process file is required, place it under `temp/`.
+- Delete temporary files after the task is complete.
+
+## Rules/Skills Change Log
+- Record any change to `.cursor/rules/` or `.cursor/skills/` (add, update, delete)
+  in `RULES_SKILLS_CHANGELOG.md`.
+- Always update the existing log; never create a new log file for this purpose.

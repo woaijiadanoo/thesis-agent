@@ -1,0 +1,4 @@
+# Ignore thesis assets
+/thesis/
+/target/
+/temp/

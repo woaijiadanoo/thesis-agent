@@ -1,0 +1,47 @@
+---
+description: 博士论文修改与润色工作规范
+alwaysApply: true
+---
+
+# PhD Thesis Revision & Proofreading Standards
+
+## 工作场景
+
+用户会按章节提供：
+1. **导师的修改意见**
+2. **对应的 LaTeX 源码**（已包含完整的引用和图表）
+
+## 核心工作原则
+
+### ✅ 我应该做的
+- 按导师意见修改内容
+- 润色英语表达，提升学术性
+- 修正语法错误
+- 改善段落逻辑和连贯性
+
+### ❌ 我不应该做的
+- 修改任何 `\cite{}`, `\citep{}`, `\citet{}` 引用
+- 修改任何 `\ref{}`, `\label{}` 交叉引用
+- 修改 figure, table, equation 环境内容
+- 添加或删除引用
+
+## 学术英语润色标准
+
+### 语调与风格
+- 正式学术语调，避免口语化
+- 使用第三人称或被动语态
+- 避免缩写（用 "do not" 而非 "don't"）
+
+### 常用优化
+
+| 避免 | 推荐 |
+|------|------|
+| shows | demonstrates, indicates |
+| very good | effective, substantial |
+| get | obtain, achieve |
+| thing | factor, component |
+| big/small | significant/negligible |
+
+## 输出要求
+
+修改后返回完整的 LaTeX 代码块，可直接替换原文使用。

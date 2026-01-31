@@ -49,6 +49,36 @@ academic polish and optional humanizer.
 4. Receive:
    - Modified LaTeX that preserves citations, refs, figures, tables, equations.
 
+### Request template
+```
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
+
+[Chapter to edit]
+Chapter 1
+
+[Tools/Process]
+- thesis-pipeline (latex-guard → academic-polisher → humanizer)
+
+[Supervisor feedback]
+1) ...
+2) ...
+
+[LaTeX content]
+\chapter{INTRODUCTION}
+...
+
+[Task]
+Use thesis-pipeline, protect LaTeX structure, academic polish + humanizer,
+output complete LaTeX, write output under target/ and create the chapter folder.
+
+[Output requirements]
+- Output file: target/chapter 1/chapter-1.tex
+- Chapter folder: target/chapter 1/
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
+- Skills/process: latex-guard → academic-polisher → humanizer (academic mode)
+```
+
 ---
 
 ## Scenario 2: Academic Polishing Only (No Humanizer)
@@ -71,6 +101,29 @@ You want formal academic tone and structure improvements only.
    - "Use latex-guard + academic-polisher. Do not run humanizer."
 3. Receive:
    - Academic-polished LaTeX with protected elements unchanged.
+
+### Request template
+```
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
+
+[Chapter/Section to edit]
+Chapter 2, Section 2.1
+
+[Tools/Process]
+- latex-guard + academic-polisher
+
+[LaTeX content]
+\section{...}
+...
+
+[Task]
+Use latex-guard + academic-polisher only; do not run humanizer.
+
+[Output requirements]
+- Output: revised LaTeX for the provided section only
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
+```
 
 ---
 
@@ -96,6 +149,32 @@ supervisor comments.
 3. Receive:
    - Revised LaTeX ready to paste.
 
+### Request template
+```
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
+
+[Chapter to edit]
+Chapter 3
+
+[Tools/Process]
+- thesis-pipeline (latex-guard → academic-polisher → humanizer)
+
+[LaTeX content]
+\chapter{...}
+...
+
+[Task]
+Use thesis-pipeline with humanizer, output complete LaTeX under target/,
+and create the chapter folder.
+
+[Output requirements]
+- Output file: target/chapter 1/chapter-1.tex
+- Chapter folder: target/chapter 1/
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
+- Skills/process: latex-guard → academic-polisher → humanizer (academic mode)
+```
+
 ---
 
 ## Scenario 4: AI Writing Score Too High (Targeted Reduction)
@@ -119,6 +198,28 @@ You ran an AI writing detector and the score is too high.
    - "Reduce AI writing signals only; keep citations/refs unchanged."
 3. Receive:
    - Rewritten paragraphs with more natural academic flow.
+
+### Request template
+```
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
+
+[Chapter to edit]
+Chapter 4
+
+[Tools/Process]
+- humanizer (optional latex-guard if LaTeX)
+
+[Problem paragraph]
+... \cite{...} ... \ref{...} ...
+
+[Task]
+Reduce AI writing signals only; keep citations/refs unchanged.
+
+[Output requirements]
+- Output: revised paragraph only
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
+```
 
 ---
 
@@ -145,6 +246,28 @@ Humanizer output still feels unnatural or fails an AI detector.
 3. Receive:
    - Improved paragraph(s) with reduced AI patterns.
 
+### Request template
+```
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
+
+[Chapter to edit]
+Chapter 4
+
+[Tools/Process]
+- humanizer (second pass)
+
+[Humanized paragraph]
+...
+
+[Task]
+Second-pass humanizer to reduce template-like phrasing.
+
+[Output requirements]
+- Output: revised paragraph only
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
+```
+
 ---
 
 ## Scenario 6: Minimal Edit, Preserve Most Text
@@ -167,6 +290,28 @@ You want only grammar fixes and light academic tone improvements.
    - "Do minimal edits only, fix grammar and clarity, preserve structure."
 3. Receive:
    - Minimal-change LaTeX output.
+
+### Request template
+```
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
+
+[Chapter/Section to edit]
+Chapter 5, Section 5.2
+
+[Tools/Process]
+- latex-guard + light academic-polisher
+
+[LaTeX content]
+...
+
+[Task]
+Minimal edits for grammar and clarity only.
+
+[Output requirements]
+- Output: revised LaTeX for the provided section only
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
+```
 
 ---
 
@@ -193,6 +338,32 @@ Only a single paragraph or section needs rework.
 4. Receive:
    - Updated paragraph (LaTeX) to replace in your file.
 
+### Request template
+```
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
+
+[Chapter/Section to edit]
+Chapter 6, Section 6.3
+
+[Tools/Process]
+- latex-guard + academic-polisher (or humanizer if requested)
+
+[Supervisor feedback]
+1) ...
+
+[Paragraph/Subsection LaTeX]
+\subsection{...}
+...
+
+[Task]
+Edit only this part; keep all references unchanged.
+
+[Output requirements]
+- Output: revised paragraph/subsection only
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
+```
+
 ---
 
 ## Scenario 8: Terminology Consistency Pass
@@ -218,6 +389,32 @@ You want consistent term usage (e.g., "dataset" vs "data set") across a chapter.
 4. Receive:
    - Updated LaTeX with consistent terms.
 
+### Request template
+```
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
+
+[Chapter to edit]
+Chapter 2
+
+[Tools/Process]
+- latex-guard + academic-polisher
+
+[Terminology list]
+1) dataset -> data set
+2) ...
+
+[LaTeX content]
+...
+
+[Task]
+Apply terminology list; keep structure unchanged.
+
+[Output requirements]
+- Output: revised LaTeX for the provided content only
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
+```
+
 ---
 
 ## Scenario 9: Output Must Match University Style
@@ -241,6 +438,28 @@ You need Malaysian university standards (UM/UPM/UTM) style.
    - "Use Malaysian thesis style (UM/UPM/UTM)."
 3. Receive:
    - Style-compliant LaTeX output.
+
+### Request template
+```
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
+
+[Chapter to edit]
+Chapter 1
+
+[Tools/Process]
+- academic-polisher (Malaysian thesis style)
+
+[LaTeX content]
+...
+
+[Task]
+Polish to UM/UPM/UTM academic style.
+
+[Output requirements]
+- Output: revised LaTeX for the provided content only
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
+```
 
 ---
 
@@ -267,6 +486,28 @@ need polishing but references must remain unchanged.
 3. Receive:
    - Correctly preserved reference with improved prose.
 
+### Request template
+```
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
+
+[Chapter to edit]
+Chapter 1
+
+[Tools/Process]
+- latex-guard + academic-polisher
+
+[Mixed sentence]
+The results in Figure~\ref{...} demonstrate ... \cite{...}.
+
+[Task]
+Edit text only; keep citations/references intact.
+
+[Output requirements]
+- Output: revised sentence/paragraph only
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
+```
+
 ---
 
 ## Scenario 11: Replace the Entire Chapter After Revisions
@@ -290,6 +531,30 @@ You want a complete replacement block to paste into the `.tex` file.
    - "Return the complete chapter LaTeX only."
 3. Receive:
    - Complete, compilable LaTeX block to paste back.
+
+### Request template
+```
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
+
+[Chapter to edit]
+Chapter 7
+
+[Tools/Process]
+- thesis-pipeline (latex-guard → academic-polisher → humanizer)
+
+[Full chapter LaTeX]
+\chapter{...}
+...
+
+[Task]
+Output complete LaTeX only, no extra commentary.
+
+[Output requirements]
+- Output: complete chapter LaTeX only
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
+- If writing files: target/chapter 7/chapter-7.tex
+```
 
 ---
 
@@ -315,21 +580,28 @@ Your chapter is large and you want to revise one section at a time.
 3. Receive:
    - Revised section to paste into the chapter.
 
----
-
-## Example Request Template (Copy and Fill)
-
+### Request template
 ```
-[Supervisor feedback]
-1) ...
-2) ...
+[Supervisor requirements file] (optional)
+@path/to/requirements.md
 
-[LaTeX content]
+[Chapter/Section to edit]
+Chapter 8, Section 8.1
+
+[Tools/Process]
+- latex-guard + academic-polisher (optional humanizer)
+
+[Single section LaTeX]
 \section{...}
 ...
 
 [Task]
-Apply thesis-pipeline with LaTeX protection, academic polish, and humanizer.
-Return full revised LaTeX only.
+Process only this section and output complete LaTeX for it.
+
+[Output requirements]
+- Output: revised LaTeX for this section only
+- Preserve: \cite{}, \ref{}, \label{}, figure/table/equation environments
 ```
+
+---
 

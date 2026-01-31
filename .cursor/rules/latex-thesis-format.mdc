@@ -1,0 +1,59 @@
+---
+description: LaTeX 论文格式处理规范 - 保护现有结构
+globs: "**/*.tex"
+alwaysApply: false
+---
+
+# LaTeX Thesis Formatting Rules
+
+## ⚠️ 核心原则：只润色文本，不破坏结构
+
+用户提供的是已完成的论文，包含现有的图表和引用，修改时必须：
+
+1. **绝对不修改** 任何 `\cite{}`, `\citep{}`, `\citet{}` 引用命令
+2. **绝对不修改** 任何 `\ref{}`, `\label{}` 交叉引用
+3. **绝对不修改** 图表环境内的任何内容
+4. **只修改** 纯文本段落的英语表达
+
+## 🔒 必须原样保留的内容
+
+### 引用命令 - 不要触碰
+```latex
+\cite{xxx}        % 保持原样
+\citep{xxx}       % 保持原样  
+\citet{xxx}       % 保持原样
+\cite{a,b,c}      % 保持原样
+```
+
+### 交叉引用 - 不要触碰
+```latex
+Figure~\ref{fig:xxx}    % 保持原样
+Table~\ref{tab:xxx}     % 保持原样
+Section~\ref{sec:xxx}   % 保持原样
+Equation~\ref{eq:xxx}   % 保持原样
+```
+
+### 完整环境块 - 不要触碰
+```latex
+\begin{figure}...\end{figure}      % 整块保留
+\begin{table}...\end{table}        % 整块保留
+\begin{equation}...\end{equation}  % 整块保留
+\begin{algorithm}...\end{algorithm}% 整块保留
+\begin{lstlisting}...\end{lstlisting} % 整块保留
+```
+
+## ✅ 可以修改的内容
+
+只修改环境外的纯文本段落：
+
+```latex
+% 修改前
+This method is very good and shows big improvement \citep{smith2023}.
+
+% 修改后 - 只改文字，保留引用
+This method demonstrates substantial improvement \citep{smith2023}.
+```
+
+## 修改输出格式
+
+返回修改后的完整 LaTeX 代码，保持原有格式和缩进。

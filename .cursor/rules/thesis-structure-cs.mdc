@@ -1,0 +1,68 @@
+---
+description: CS/IT 博士论文结构指南
+alwaysApply: true
+---
+
+# CS/IT PhD Thesis Structure Guide
+
+## 标准论文结构
+
+### Chapter 1: Introduction
+- 研究背景 (Background)
+- 问题陈述 (Problem Statement)
+- 研究目标 (Research Objectives)
+- 研究问题 (Research Questions)
+- 研究意义 (Significance of Study)
+- 论文组织结构 (Thesis Organization)
+
+### Chapter 2: Literature Review
+- 相关理论和概念
+- 现有方法综述
+- 研究差距分析 (Research Gap)
+- 理论/概念框架
+
+### Chapter 3: Research Methodology
+- 研究设计 (Research Design)
+- 数据收集方法
+- 实验设置
+- 评估指标
+- 验证方法
+
+### Chapter 4: Implementation / Proposed Method
+- 系统架构
+- 算法描述
+- 实现细节
+
+### Chapter 5: Results and Analysis
+- 实验结果
+- 性能分析
+- 与现有方法对比
+- 讨论发现
+
+### Chapter 6: Conclusion
+- 研究总结
+- 研究贡献
+- 研究局限
+- 未来工作建议
+
+## 写作要点
+
+### Introduction 章节
+- 采用"倒金字塔"结构：从广泛背景到具体问题
+- 研究目标应与研究问题对应
+- 明确说明研究范围和边界
+
+### Literature Review 章节
+- 按主题组织，而非按时间顺序
+- 批判性分析，而非简单罗列
+- 最后明确指出研究差距
+
+### Methodology 章节
+- 详细程度应保证可重复性
+- 说明选择该方法的理由
+- 讨论方法的局限性
+
+### Results 章节
+- 先描述结果，再解释原因
+- 使用图表呈现关键数据
+- 统计显著性需说明

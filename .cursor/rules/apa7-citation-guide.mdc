@@ -1,0 +1,48 @@
+---
+description: APA 7th Edition 引用格式参考（只读）
+globs: "**/*.tex"
+alwaysApply: false
+---
+
+# APA 7th Edition Citation Reference
+
+## ⚠️ 重要说明
+
+用户论文中的引用已经完成，此规则仅供参考，**不要修改现有引用**。
+
+## 现有引用命令 - 保持原样
+
+用户论文中可能使用以下引用命令，修改时原样保留：
+
+```latex
+\cite{key}           % 标准引用
+\citep{key}          % 括号引用 (Author, Year)
+\citet{key}          % 文本引用 Author (Year)
+\cite{key1,key2}     % 多源引用
+\citep[p.~10]{key}   % 带页码引用
+```
+
+## 引用周围文本的润色
+
+可以润色引用周围的文字，但引用命令本身不变：
+
+```latex
+% 原文
+According to the study \citep{smith2023}, this method is good.
+
+% 润色后 - \citep{smith2023} 保持完全不变
+According to \citet{smith2023}, this method demonstrates effectiveness.
+```
+
+## 不要做的事
+
+1. ❌ 不要修改 `\cite{}` 内的 key
+2. ❌ 不要添加新的引用
+3. ❌ 不要删除现有引用
+4. ❌ 不要更改引用命令类型（如 `\citep` 改为 `\cite`）
+
+## 可以做的事
+
+1. ✅ 润色引用前后的文字表达
+2. ✅ 调整引用所在句子的语法结构
+3. ✅ 改善段落的连贯性

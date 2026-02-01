@@ -21,3 +21,17 @@ This file tracks changes to `.cursor/rules/` and `.cursor/skills/`.
 - Date: 2026-01-31
   - Change: Added `.cursor/rules/file-hygiene.mdc`
   - Reason: Enforce file hygiene and temp file handling; single log file.
+
+- Date: 2026-02-01
+  - Change: Added `.cursor/skills/thesis-refine-with-latex/` skill
+  - Reason: Specialized LaTeX thesis revision orchestrator with chunking, self-healing, clarification mode, and change logging. Coordinates latex-guard, academic-polisher, and humanizer for <10% Turnitin AI target.
+  - Files:
+    - `.cursor/skills/thesis-refine-with-latex/SKILL.md` - Main skill definition
+    - `.cursor/skills/thesis-refine-with-latex/references/chunking-strategy.md` - Long document handling
+    - `.cursor/skills/thesis-refine-with-latex/references/feedback-matching.md` - Ambiguous feedback clarification
+    - `.cursor/skills/thesis-refine-with-latex/references/self-healing.md` - Placeholder recovery
+    - `.cursor/skills/thesis-refine-with-latex/references/change-log-format.md` - Output structure
+
+- Date: 2026-02-01
+  - Change: Added `.cursor/rules/specify-rules.mdc` (auto-generated)
+  - Reason: Development guidelines from speckit plan for thesis-refine-orchestrator feature

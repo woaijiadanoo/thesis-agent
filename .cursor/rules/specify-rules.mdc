@@ -4,6 +4,8 @@ Auto-generated from all feature plans. Last updated: 2026-02-01
 
 ## Active Technologies
 - N/A (in-memory processing per invocation) (002-thesis-refine-orchestrator)
+- Markdown (SKILL.md format) + reference files + Existing skills (`latex-guard`, `academic-polisher`, `humanizer` patterns) (003-thesis-humanizer-skill)
+- File-based (`.cursor/skills/thesis-humanizer/`) (003-thesis-humanizer-skill)
 
 - Markdown (Cursor Agent Skill) - prompt engineering + Existing skills (`latex-guard`, `academic-polisher`, `humanizer`) (002-thesis-refine-orchestrator)
 
@@ -23,6 +25,7 @@ tests/
 Markdown (Cursor Agent Skill) - prompt engineering: Follow standard conventions
 
 ## Recent Changes
+- 003-thesis-humanizer-skill: Added Markdown (SKILL.md format) + reference files + Existing skills (`latex-guard`, `academic-polisher`, `humanizer` patterns)
 - 002-thesis-refine-orchestrator: Added Markdown (Cursor Agent Skill) - prompt engineering + Existing skills (`latex-guard`, `academic-polisher`, `humanizer`)
 
 - 002-thesis-refine-orchestrator: Added Markdown (Cursor Agent Skill) - prompt engineering + Existing skills (`latex-guard`, `academic-polisher`, `humanizer`)

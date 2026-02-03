@@ -35,3 +35,13 @@ This file tracks changes to `.cursor/rules/` and `.cursor/skills/`.
 - Date: 2026-02-01
   - Change: Added `.cursor/rules/specify-rules.mdc` (auto-generated)
   - Reason: Development guidelines from speckit plan for thesis-refine-orchestrator feature
+
+- Date: 2026-02-03
+  - Change: Added `.cursor/skills/thesis-humanizer/` skill
+  - Reason: Academic-specific AI pattern removal for LaTeX thesis content. Merges all 24 humanizer patterns with thesis-specific adaptations. Supports multi-pass iterative processing, LaTeX protection, and change logging. Target: Turnitin AI Writing <10%.
+  - Files:
+    - `.cursor/skills/thesis-humanizer/SKILL.md` - Main skill definition (~500 lines)
+    - `.cursor/skills/thesis-humanizer/references/ai-patterns-academic.md` - All 29 patterns with academic adaptations
+    - `.cursor/skills/thesis-humanizer/references/replacement-dictionary.md` - AI vocabulary and formal upgrades
+    - `.cursor/skills/thesis-humanizer/references/rhythm-techniques.md` - Sentence variation strategies
+    - `.cursor/skills/thesis-humanizer/references/multi-pass-workflow.md` - Iterative processing guide

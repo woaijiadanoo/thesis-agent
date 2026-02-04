@@ -4,7 +4,7 @@
 **Author**: Jiang Zheng
 **Degree**: Doctor of Philosophy (Ph.D.) in Information Technology
 **Institution**: Multimedia University, Malaysia
-**Last Updated**: 2026-01-31
+**Last Updated**: 2026-02-03
 
 ---
 
@@ -101,11 +101,10 @@
 
 ### Related Works
 
-| Full Form                                 | Abbreviation | First Use              | Description                |
-| ----------------------------------------- | ------------ | ---------------------- | -------------------------- |
-| Privacy-Preserving Spatial Crowdsourcing  | PriSC        | Chapter 2              | Related privacy scheme     |
-| Data Aggregation and Batch Authentication | DABAB        | Chapter 2              | Related privacy solution   |
-| Paid Information Collection               | PIC          | Chapter 1, Section 1.1 | Mobility data monetisation |
+| Full Form                                 | Abbreviation | First Use | Description              |
+| ----------------------------------------- | ------------ | --------- | ------------------------ |
+| Privacy-Preserving Spatial Crowdsourcing  | PriSC        | Chapter 2 | Related privacy scheme   |
+| Data Aggregation and Batch Authentication | DABAB        | Chapter 2 | Related privacy solution |
 
 ---
 
@@ -225,9 +224,11 @@
 ### Chapter 1: Introduction
 
 - Define IoV, SBM, V2X on first use
+- Use industry standard abbreviations: 5G, V2V, V2I, V2P, V2N, DSRC, C-V2X, ITS, RSU, PBFT
 - Introduce PPF, SBM-SA, PriDUS, MSMC, AG-PBFT
 - Establish PS1, PS2, PS3 -> RQ1, RQ2, RQ3 -> RO1, RO2, RO3, RO4 mapping
 - Reference SBM components: vehicle identity, LV (location of vehicle), LS (location of scene)
+- Avoid specific numeric values without citation support
 
 ### Chapter 2: Literature Review
 
